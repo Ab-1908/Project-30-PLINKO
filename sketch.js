@@ -22,11 +22,28 @@ function setup() {
 	underground3 = new Underground (1,400,10,800);
 	underground4 = new Underground (240,1,480,10);
 	
-  for(var j = 40; j <= width; j=j=50){
-
-    plinkos.push(new Plinko(j,75));
+  
+  for(var j = 40; j <= width; j=j+90){
+    plinkos.push(new Plinko(j,125));
+    
   }
 
+  for(var j = 40; j <= width -10; j=j+65){
+    plinkos.push(new Plinko(j,225));
+    
+  }
+
+  
+  for(var j = 40; j <= width -20; j=j+80){
+    plinkos.push(new Plinko(j,325));
+    
+  }
+
+  
+  for(var j = 40; j <= width -30; j=j+65){
+    plinkos.push(new Plinko(j,425));
+    
+  }
   for(var k = 0; k <= width; k = k+80){
 	divisions.push(new Division(k, height-divisionHeight/2,10,divisionHeight));
 	
@@ -45,10 +62,15 @@ function draw() {
   underground3.display();
   underground4.display(); 
 
-  
-  for (var j = 0;j < plinkos; j++){
+   if(frameCount %60 === 0){
 
-    divisions[j].display();
+    particles.push(new Particle(random(width/2-10, width/2+10),10,10))
+   }
+
+ 
+  for (var j = 0;j < plinkos.length; j++){
+
+     plinkos[j].display();
 
    }
 

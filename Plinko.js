@@ -1,22 +1,17 @@
-class Plinko {
-    constructor(x,y,r) {
+class Plinko{
+    constructor(x,y) {
       var options = {
-          isStatic: true,
-          restitution:0,
-          friction:1
-         
+          isStatic: true
       }
-      this.body = Bodies.circle(x,y,r,options);
-      this.width = r;
-      this.height = r;
+      this.body = Bodies.rectangle(x,y,30,30,options);
+      this.width = 30;
+      this.height = 30;
       World.add(world, this.body);
     }
     display(){
       var pos =this.body.position;
-      ellipseMode(RADIUS);
-      fill("yellow");
-      ellipse(this.body.position.x,this.body.position.y,this.width,this.height);
-     
-      
+      rectMode(CENTER);
+      fill("white");
+      rect(pos.x, pos.y, this.width, this.height);
     }
   };

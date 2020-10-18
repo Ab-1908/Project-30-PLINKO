@@ -13,6 +13,7 @@ class Particle {
       this.width = r;
       this.height = r;
       World.add(world, this.body);
+  
     }
     display(){
       var pos = this.body.position;
